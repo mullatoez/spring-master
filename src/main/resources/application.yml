@@ -1,0 +1,66 @@
+server:
+  port: '8001'
+
+spring:
+  profiles:
+    active: qa
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/daily_code_coolapp
+    password: '12345'
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+home:
+  message: This is the home page
+welcome:
+  message: Welcome to Mullatoez Code
+
+---
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/daily_code_coolapp_qa
+    password: '12345'
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+home:
+  message: This is the home page
+welcome:
+  message: Welcome to Mullatoez Code
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
+
+---
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/daily_code_coolapp_prod
+    password: '12345'
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+home:
+  message: This is the home page
+welcome:
+  message: Welcome to Mullatoez Code
+
