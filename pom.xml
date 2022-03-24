@@ -68,6 +68,10 @@
         </dependency>
     </dependencies>
 
+    <!--<configuration>
+        <skipTests>true</skipTests>
+    </configuration>-->
+
     <build>
         <plugins>
             <plugin>
